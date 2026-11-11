@@ -121,7 +121,10 @@ Defect Detection/
 
 FastAPI · SQLAlchemy · 豆包 VLM · FAISS · React · Vite · Tailwind
 
-## 从旧版 PolySafe 迁移
+## 检测预览
 
-- 数据库默认文件改为 `screw_inspect.db`；若需新策略种子数据，请删除旧 `.db` 后重新 `python seed_data.py`。
-- 任务状态语义：`pass`=良品放行，`block`=不合格拦截，`review`=待复检。
+样例为颈部划痕 `scratch_neck/060`。
+
+| VLM 精查 | 6D 位姿 |
+| --- | --- |
+| ![VLM 精查：颈部划痕检测框](screw_algo/runs/vlm_preview/060.jpg) | ![6D 位姿：yolo_pnp 坐标轴](screw_algo/runs/pose_preview/060.jpg) |
