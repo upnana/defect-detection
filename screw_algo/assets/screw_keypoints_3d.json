@@ -1,0 +1,12 @@
+{
+  "description": "螺丝头部平面四点 + 杆尖（物体坐标系，单位 mm），用于 solvePnP",
+  "keypoint_names": ["head_p1", "head_p2", "head_p3", "head_p4", "shank_tip"],
+  "points_mm": [
+    [-4.0, -4.0, 0.0],
+    [4.0, -4.0, 0.0],
+    [4.0, 4.0, 0.0],
+    [-4.0, 4.0, 0.0],
+    [0.0, 0.0, -18.0]
+  ],
+  "yolo_keypoint_index_map": [0, 1, 2, 3, 4]
+}

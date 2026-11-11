@@ -1,0 +1,54 @@
+{
+  "comment": "品种/品类 id → 分拣与夹取策略（产线可扩展多 SKU）",
+  "default": {
+    "strategy_id": "screw_standard",
+    "grip_profile": "parallel_jaw_medium",
+    "target_bin": "conveyor_continue",
+    "pose_profile": "default_screw",
+    "notes": "默认汽车紧固件螺丝"
+  },
+  "by_class_id": {
+    "good": {
+      "strategy_id": "good_release",
+      "grip_profile": "light_touch",
+      "target_bin": "ok_lane",
+      "pose_profile": "default_screw",
+      "notes": "良品直通，轻夹爪力"
+    },
+    "manipulated_front": {
+      "strategy_id": "defect_reject_front",
+      "grip_profile": "parallel_jaw_medium",
+      "target_bin": "ng_bin_a",
+      "pose_profile": "head_up_view",
+      "notes": "正面篡改 → NG 料箱 A"
+    },
+    "scratch_head": {
+      "strategy_id": "defect_reject_surface",
+      "grip_profile": "parallel_jaw_medium",
+      "target_bin": "ng_bin_b",
+      "pose_profile": "default_screw",
+      "notes": "头部划痕"
+    },
+    "scratch_neck": {
+      "strategy_id": "defect_reject_shank",
+      "grip_profile": "soft_jaw",
+      "target_bin": "ng_bin_b",
+      "pose_profile": "neck_visible",
+      "notes": "颈部划痕，软爪避免二次损伤"
+    },
+    "thread_side": {
+      "strategy_id": "defect_reject_thread",
+      "grip_profile": "parallel_jaw_medium",
+      "target_bin": "ng_bin_c",
+      "pose_profile": "side_thread_view",
+      "notes": "侧面螺纹缺陷"
+    },
+    "thread_top": {
+      "strategy_id": "defect_reject_thread_top",
+      "grip_profile": "parallel_jaw_medium",
+      "target_bin": "ng_bin_c",
+      "pose_profile": "top_thread_view",
+      "notes": "顶部螺纹缺陷"
+    }
+  }
+}

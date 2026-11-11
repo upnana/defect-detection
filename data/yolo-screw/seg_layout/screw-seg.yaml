@@ -1,0 +1,12 @@
+path: D:/project/Defect Detection/data/yolo-screw/seg_layout
+train: images/train
+val: images/val
+test: images/test
+
+names:
+  0: good
+  1: manipulated_front
+  2: scratch_head
+  3: scratch_neck
+  4: thread_side
+  5: thread_top

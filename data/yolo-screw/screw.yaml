@@ -1,0 +1,18 @@
+# screw-dataset -> YOLO (auto-generated)
+path: D:/project/Defect Detection/data/yolo-screw
+train: images/train
+val: images/val
+test: images/test
+
+task: segment
+names:
+  0: good
+  1: manipulated_front
+  2: scratch_head
+  3: scratch_neck
+  4: thread_side
+  5: thread_top
+
+# 检测任务可将 train 标签目录改为 labels_detect，task 改为 detect
+labels_seg: labels_seg
+labels_detect: labels_detect

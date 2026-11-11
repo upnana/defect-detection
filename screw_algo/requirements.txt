@@ -1,0 +1,10 @@
+# screw_algo 离线推理（Python 3.10–3.12 推荐）
+# GPU 可选：先按 https://pytorch.org 安装对应 CUDA 版 torch/torchvision，再装其余依赖
+
+numpy>=1.26.0,<3
+opencv-python-headless==4.10.0.84
+httpx==0.27.2
+pydantic-settings==2.5.2
+ultralytics>=8.2.0
+torch>=2.1.0
+torchvision>=0.16.0

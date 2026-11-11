@@ -1,0 +1,427 @@
+{
+  "image": "D:\\project\\Defect Detection\\data\\screw-dataset\\dataset\\scratch_neck\\images\\060.png",
+  "config": {
+    "yolo_coarse": "D:\\project\\Defect Detection\\backend\\models\\screw_yolov8.pt",
+    "yolo_pose": "D:\\project\\Defect Detection\\backend\\models\\screw_yolov8_pose.pt",
+    "tinydetr_pose": "D:\\project\\Defect Detection\\backend\\models\\screw_tinydetr_pose.pt",
+    "vlm_provider": "deepseek",
+    "pose_mode": "auto"
+  },
+  "timing_ms": {
+    "coarse": 4157.954099999188,
+    "inspection": 0.006599999323952943,
+    "decision": 0.022000000171829015,
+    "pose": 176.51830000068003,
+    "total": 4334.500999999364
+  },
+  "coarse_screen": {
+    "enabled": true,
+    "skip_vlm": false,
+    "trigger_vlm": true,
+    "detections": [
+      {
+        "class_id": "scratch_neck",
+        "confidence": 0.9123,
+        "bbox": [
+          402.68,
+          467.06,
+          470.78,
+          534.66
+        ]
+      }
+    ],
+    "primary_class": "scratch_neck",
+    "max_confidence": 0.9123,
+    "message": "YOLO 粗筛完成",
+    "defect_candidates": [
+      "scratch_neck"
+    ]
+  },
+  "inspection": {
+    "violation_detected": true,
+    "violation_types": [
+      "scratch_neck"
+    ],
+    "confidence": 0.9123,
+    "risk_description": "YOLO 粗筛候选（待 VLM 确认或超时回退）",
+    "source": "yolo_coarse",
+    "coarse_screen": {
+      "enabled": true,
+      "skip_vlm": false,
+      "trigger_vlm": true,
+      "detections": [
+        {
+          "class_id": "scratch_neck",
+          "confidence": 0.9123,
+          "bbox": [
+            402.68,
+            467.06,
+            470.78,
+            534.66
+          ]
+        }
+      ],
+      "primary_class": "scratch_neck",
+      "max_confidence": 0.9123,
+      "message": "YOLO 粗筛完成",
+      "defect_candidates": [
+        "scratch_neck"
+      ]
+    },
+    "stage": "coarse_only_no_vlm"
+  },
+  "decision": {
+    "action": "block",
+    "reason": "检出缺陷：颈部划痕",
+    "defect_ids": [
+      "scratch_neck"
+    ]
+  },
+  "pose_6d": {
+    "frame": "robot_base",
+    "translation_mm": {
+      "x": -8.749,
+      "y": -2.632,
+      "z": 110.454,
+      "unit": "mm"
+    },
+    "rotation": {
+      "euler_xyz_deg": {
+        "rx": 17.08,
+        "ry": -3.1,
+        "rz": -7.83,
+        "unit": "deg",
+        "convention": "intrinsic XYZ (OpenCV Rodrigues → R → Euler)"
+      },
+      "yaw_pitch_roll_deg": {
+        "yaw": -7.83,
+        "pitch": -3.1,
+        "roll": 17.08,
+        "unit": "deg"
+      },
+      "quaternion_wxyz": {
+        "w": 0.98652,
+        "x": 0.14629,
+        "y": -0.03683,
+        "z": -0.06346
+      }
+    },
+    "vector_6d": [
+      -8.749,
+      -2.632,
+      110.454,
+      17.08,
+      -3.1,
+      -7.83
+    ],
+    "vector_6d_desc": "tx_mm, ty_mm, tz_mm, rx_deg, ry_deg, rz_deg"
+  },
+  "pose": {
+    "success": true,
+    "method": "yolo_pnp",
+    "confidence": 0.772,
+    "reprojection_error_px": 4.56,
+    "pose_6d": {
+      "frame": "robot_base",
+      "translation_mm": {
+        "x": -8.749,
+        "y": -2.632,
+        "z": 110.454,
+        "unit": "mm"
+      },
+      "rotation": {
+        "euler_xyz_deg": {
+          "rx": 17.08,
+          "ry": -3.1,
+          "rz": -7.83,
+          "unit": "deg",
+          "convention": "intrinsic XYZ (OpenCV Rodrigues → R → Euler)"
+        },
+        "yaw_pitch_roll_deg": {
+          "yaw": -7.83,
+          "pitch": -3.1,
+          "roll": 17.08,
+          "unit": "deg"
+        },
+        "quaternion_wxyz": {
+          "w": 0.98652,
+          "x": 0.14629,
+          "y": -0.03683,
+          "z": -0.06346
+        }
+      },
+      "vector_6d": [
+        -8.749,
+        -2.632,
+        110.454,
+        17.08,
+        -3.1,
+        -7.83
+      ],
+      "vector_6d_desc": "tx_mm, ty_mm, tz_mm, rx_deg, ry_deg, rz_deg"
+    },
+    "pose_6d_camera": {
+      "frame": "camera",
+      "translation_mm": {
+        "x": -8.749,
+        "y": -2.632,
+        "z": 110.454,
+        "unit": "mm"
+      },
+      "rotation": {
+        "euler_xyz_deg": {
+          "rx": 17.08,
+          "ry": -3.1,
+          "rz": -7.83,
+          "unit": "deg",
+          "convention": "intrinsic XYZ (OpenCV Rodrigues → R → Euler)"
+        },
+        "yaw_pitch_roll_deg": {
+          "yaw": -7.83,
+          "pitch": -3.1,
+          "roll": 17.08,
+          "unit": "deg"
+        },
+        "quaternion_wxyz": {
+          "w": 0.98652,
+          "x": 0.14628,
+          "y": -0.03682,
+          "z": -0.06349
+        }
+      },
+      "vector_6d": [
+        -8.749,
+        -2.632,
+        110.454,
+        17.08,
+        -3.1,
+        -7.83
+      ],
+      "vector_6d_desc": "tx_mm, ty_mm, tz_mm, rx_deg, ry_deg, rz_deg"
+    },
+    "pose_6d_robot": {
+      "frame": "robot_base",
+      "translation_mm": {
+        "x": -8.749,
+        "y": -2.632,
+        "z": 110.454,
+        "unit": "mm"
+      },
+      "rotation": {
+        "euler_xyz_deg": {
+          "rx": 17.08,
+          "ry": -3.1,
+          "rz": -7.83,
+          "unit": "deg",
+          "convention": "intrinsic XYZ (OpenCV Rodrigues → R → Euler)"
+        },
+        "yaw_pitch_roll_deg": {
+          "yaw": -7.83,
+          "pitch": -3.1,
+          "roll": 17.08,
+          "unit": "deg"
+        },
+        "quaternion_wxyz": {
+          "w": 0.98652,
+          "x": 0.14629,
+          "y": -0.03683,
+          "z": -0.06346
+        }
+      },
+      "vector_6d": [
+        -8.749,
+        -2.632,
+        110.454,
+        17.08,
+        -3.1,
+        -7.83
+      ],
+      "vector_6d_desc": "tx_mm, ty_mm, tz_mm, rx_deg, ry_deg, rz_deg"
+    },
+    "camera_frame": {
+      "translation_mm": [
+        -8.749,
+        -2.632,
+        110.454
+      ],
+      "rotation_vec": [
+        0.2939,
+        -0.074,
+        -0.1275
+      ],
+      "rotation_deg": [
+        17.08,
+        -3.1,
+        -7.83
+      ],
+      "rotation_matrix": [
+        [
+          0.9892,
+          0.1145,
+          -0.0912
+        ],
+        [
+          -0.136,
+          0.9491,
+          -0.284
+        ],
+        [
+          0.0541,
+          0.2933,
+          0.9545
+        ]
+      ],
+      "pose_6d": {
+        "frame": "camera",
+        "translation_mm": {
+          "x": -8.749,
+          "y": -2.632,
+          "z": 110.454,
+          "unit": "mm"
+        },
+        "rotation": {
+          "euler_xyz_deg": {
+            "rx": 17.08,
+            "ry": -3.1,
+            "rz": -7.83,
+            "unit": "deg",
+            "convention": "intrinsic XYZ (OpenCV Rodrigues → R → Euler)"
+          },
+          "yaw_pitch_roll_deg": {
+            "yaw": -7.83,
+            "pitch": -3.1,
+            "roll": 17.08,
+            "unit": "deg"
+          },
+          "quaternion_wxyz": {
+            "w": 0.98652,
+            "x": 0.14628,
+            "y": -0.03682,
+            "z": -0.06349
+          }
+        },
+        "vector_6d": [
+          -8.749,
+          -2.632,
+          110.454,
+          17.08,
+          -3.1,
+          -7.83
+        ],
+        "vector_6d_desc": "tx_mm, ty_mm, tz_mm, rx_deg, ry_deg, rz_deg"
+      }
+    },
+    "robot_frame": {
+      "translation_mm": [
+        -8.749,
+        -2.632,
+        110.454
+      ],
+      "rotation_vec": [
+        0.2939,
+        -0.074,
+        -0.1275
+      ],
+      "rotation_deg": [
+        17.08,
+        -3.1,
+        -7.83
+      ],
+      "transform_4x4": [
+        [
+          0.9892,
+          0.1145,
+          -0.0912,
+          -8.7487
+        ],
+        [
+          -0.136,
+          0.9491,
+          -0.284,
+          -2.6325
+        ],
+        [
+          0.0541,
+          0.2933,
+          0.9545,
+          110.4536
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          1.0
+        ]
+      ],
+      "pose_6d": {
+        "frame": "robot_base",
+        "translation_mm": {
+          "x": -8.749,
+          "y": -2.632,
+          "z": 110.454,
+          "unit": "mm"
+        },
+        "rotation": {
+          "euler_xyz_deg": {
+            "rx": 17.08,
+            "ry": -3.1,
+            "rz": -7.83,
+            "unit": "deg",
+            "convention": "intrinsic XYZ (OpenCV Rodrigues → R → Euler)"
+          },
+          "yaw_pitch_roll_deg": {
+            "yaw": -7.83,
+            "pitch": -3.1,
+            "roll": 17.08,
+            "unit": "deg"
+          },
+          "quaternion_wxyz": {
+            "w": 0.98652,
+            "x": 0.14629,
+            "y": -0.03683,
+            "z": -0.06346
+          }
+        },
+        "vector_6d": [
+          -8.749,
+          -2.632,
+          110.454,
+          17.08,
+          -3.1,
+          -7.83
+        ],
+        "vector_6d_desc": "tx_mm, ty_mm, tz_mm, rx_deg, ry_deg, rz_deg"
+      }
+    },
+    "keypoints_2d": [
+      {
+        "name": "head_p1",
+        "u": 400.3,
+        "v": 460.5
+      },
+      {
+        "name": "head_p2",
+        "u": 463.8,
+        "v": 454.8
+      },
+      {
+        "name": "head_p3",
+        "u": 486.3,
+        "v": 518.8
+      },
+      {
+        "name": "head_p4",
+        "u": 405.9,
+        "v": 524.3
+      },
+      {
+        "name": "shank_tip",
+        "u": 440.9,
+        "v": 537.0
+      }
+    ],
+    "path": "yolov8_pose_pnp",
+    "yolo_pose_confidence": 0.657,
+    "model_weights": "D:\\project\\Defect Detection\\backend\\models\\screw_yolov8_pose.pt"
+  }
+}

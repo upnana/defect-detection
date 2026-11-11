@@ -1,0 +1,7 @@
+path: D:/project/Defect Detection/data/yolo-screw-pose
+train: images/train
+val: images/val
+kpt_shape: [5, 3]
+flip_idx: [0, 1, 2, 3, 4]
+names:
+  0: screw

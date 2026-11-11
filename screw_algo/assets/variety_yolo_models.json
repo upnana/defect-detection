@@ -1,0 +1,17 @@
+{
+  "comment": "按品种选择 YOLO 粗筛权重；variety_pending 时使用 general_detection（通用检测头）",
+  "general_detection": "models/screw_yolov8_obb.pt",
+  "default_by_variety": "models/screw_yolov8_obb.pt",
+  "obb_general_detection": "models/screw_yolov8_obb.pt",
+  "variety_pending_model_key": "general_detection",
+  "variety_pending_obb_model_key": "obb_general_detection",
+  "by_class_id": {
+    "good": "models/screw_yolov8_obb.pt",
+    "manipulated_front": "models/screw_yolov8_obb.pt",
+    "scratch_head": "models/screw_yolov8_obb.pt",
+    "scratch_neck": "models/screw_yolov8_obb.pt",
+    "thread_side": "models/screw_yolov8_obb.pt",
+    "thread_top": "models/screw_yolov8_obb.pt"
+  }
+}
+
